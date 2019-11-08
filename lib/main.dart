@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prac_arch_provider_filledstack/ui/route_names.dart';
 import 'package:provider/provider.dart';
 import 'package:prac_arch_provider_filledstack/core/models/user.dart';
 import 'package:prac_arch_provider_filledstack/core/services/auth_services.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Provider Arch Demo',
         theme: ThemeData(),
-        initialRoute: 'login',
+        initialRoute: routeLogin,
+        navigatorKey: locator<Router>().navigatorKey,
         onGenerateRoute: Router.generateRoute,
       )
     );

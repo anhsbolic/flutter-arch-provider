@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prac_arch_provider_filledstack/core/enums/viewstate.dart';
+import 'package:prac_arch_provider_filledstack/locator.dart';
+import 'package:prac_arch_provider_filledstack/ui/route_names.dart';
+import 'package:prac_arch_provider_filledstack/ui/router.dart';
 import 'package:prac_arch_provider_filledstack/ui/views/base_view.dart';
 import 'package:prac_arch_provider_filledstack/ui/widgets/login_header.dart';
 import 'package:prac_arch_provider_filledstack/ui/shared/app_colors.dart';
@@ -37,7 +40,7 @@ class _LoginViewState extends State<LoginView> {
                     onPressed: () async {
                       var loginSuccess = await model.login(controller.text);
                       if (loginSuccess) {
-                        Navigator.pushNamed(context, '/');
+                        locator<Router>().navigateTo(routeHome);
                       }
                     },
                   )
